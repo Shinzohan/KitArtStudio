@@ -35,7 +35,7 @@ const About = () => {
 
         <AnimatedTitle
           title="Free<b>l</b>ancer That Does<br /> Everything U <b>E</b>ver Imagine"
-          containerClass="mt-5 !text-black text-center"
+          containerClass="mt-5 !text-zinc-800 text-center"
         />
 
         <div className="about-subtext">
