@@ -34,8 +34,8 @@ const About = () => {
         </p>
 
         <AnimatedTitle
-          title="Free<b>l</b>ancer That Does<br /> Everything U <b>E</b>ver Imagine"
-          containerClass="mt-5 !text-zinc-800 text-center"
+          title="Free<b>la</b>ncer Th<b>a</b>t Does<br /> E<b>v</b>er<b>y</b>thing U <b>Ever </b>im<b>a</b>gine"
+          containerClass="mt-5 !text-black text-center"
         />
 
         <div className="about-subtext">
@@ -49,7 +49,7 @@ const About = () => {
       <div className="h-dvh w-screen" id="clip">
         <div className="mask-clip-path about-image">
           <img
-            src="img/about-2.webp"
+            src="img/About-3.webp"
             alt="Background"
             className="absolute left-0 top-0 size-full object-cover"
           />

@@ -7,13 +7,13 @@ import {
   FaTwitch, 
   FaTwitter,
   FaInstagram,
-  FaLeaf
 } from 'react-icons/fa';
+import { PiButterflyBold } from "react-icons/pi";
 
 // Adding URLs to navItems
 const navItems = [
   { name: "Instagram", icon: FaInstagram, url: "https://www.instagram.com/kichandrawings/profilecard/" },
-  { name: "Bluesky", icon: FaLeaf, url: "https://bsky.app/profile/kitartstop.bsky.social" },
+  { name: "Bluesky", icon: PiButterflyBold, url: "https://bsky.app/profile/kitartstop.bsky.social" },
   { name: "Discord", icon: FaDiscord, url: "https://discord.gg/c4NkWnKzc3" },
   { name: "Twitch", icon: FaTwitch, url: "https://www.twitch.tv/kiartstop" },
   { name: "Twitter", icon: FaTwitter, url: "https://x.com/KitArtStop" }
