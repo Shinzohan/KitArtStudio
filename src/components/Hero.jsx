@@ -37,20 +37,20 @@ const Hero = () => {
       
       // Initial states
       tl.set("#reveal-overlay", {
-        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", // Top-left to bottom-right
       })
       .set("#image-frame", {
-        clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)",
+        clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)", // Top to bottom-left
       });
       
       // Main animation sequence
       tl.to("#reveal-overlay", {
-        clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)",
+        clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)", // Expand clip-path from top-right to bottom-right
         duration: 1.5,
         ease: "power4.inOut",
       })
       .to("#image-frame", {
-        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", // Expand clip-path from top-left to bottom-right
         duration: 1.8,
         ease: "power4.inOut",
       }, "-=1.2")
@@ -73,7 +73,7 @@ const Hero = () => {
 
       // ScrollTrigger animation
       gsap.set("#image-frame", {
-        clipPath: "polygon(0 2%, 80% 0%, 75% 69%, 11% 100%)",
+        clipPath: "polygon(0 2%, 80% 0%, 75% 69%, 11% 100%)", // Clip-path for scroll trigger
         borderRadius: "0% 0% 0% 0%",
       });
 
@@ -127,7 +127,7 @@ const Hero = () => {
             src="/videos/hero-1.webp"
             alt="Hero image"
             id="current-image"
-            className="absolute-center absolute z-10 size-full object-cover object-center"
+            className="absolute-center absolute z-10 w-full h-full object-cover object-center"
             loading="eager"
             decoding="async"
           />
@@ -135,7 +135,7 @@ const Hero = () => {
         <h1 ref={addToRefs} className="special-font hero-heading absolute bottom-5 right-5 z-40 text-black">
           KIT<b>A</b>RT
         </h1>
-        <div id="content" ref={contentRef} className="absolute left-0 top-0 z-40 size-full">
+        <div id="content" ref={contentRef} className="absolute left-0 top-0 z-40 w-full h-full">
           <div className="mt-24 px-5 sm:px-10">
             <h1 className="relative font-zentry text-5xl font-black text-black/60 sm:right-10 sm:text-7xl md:text-9xl lg:text-[5rem]">
               <span 
