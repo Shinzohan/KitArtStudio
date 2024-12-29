@@ -46,7 +46,7 @@ const FloatingImage = () => {
   };
 
   return (
-    <div id="story" className="min-h-dvh w-screen bg-black text-blue-50">
+    <div id="story" className="min-h-dvh w-screen bg-transparent text-blue-50">
       <div className="flex size-full flex-col items-center py-10 pb-24">
         <p className="font-general text-sm uppercase md:text-[10px]">
           WILL YOU LOOK AT THIS
@@ -108,7 +108,7 @@ const FloatingImage = () => {
 
         <div className="-mt-80 flex w-full justify-center md:-mt-64 md:me-44 md:justify-end">
           <div className="flex h-full w-fit flex-col items-center md:items-start">
-            <p className="mt- max-w-sm text-center font-circular-web text-violet-50 md:text-start">
+            <p className=" max-w-sm text-center font-circular-web text-violet-50 md:text-start">
             Just another gamer who loves to draw 🎮✏️ | Lets create something cool together ✨
             </p>
 

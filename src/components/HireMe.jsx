@@ -38,7 +38,7 @@ function Hire() {
   }, []);
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-black text-white font-mono border-2 border-white shadow-lg shadow-white">
+    <div className="flex justify-center items-center min-h-screen bg-black text-white font-mono">
       <div className="w-full max-w-4xl p-8">
         <h1 className="text-4xl md:text-6xl font-bold mb-8 text-center animate-pulse">
           About Me<span className="text-white">^_^</span>
