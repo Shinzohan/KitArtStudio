@@ -78,11 +78,6 @@ Make sure you have the following installed on your machine:
 
 ---
 
-## 🌈 Contributions
- For major changes, please open an issue first to discuss what you would like to change.
-
----
-
 ## 🔗 Live Demo
 Check out the live prototype here: [Kit Art Studio](https://kit-art-studio.vercel.app/)
 
