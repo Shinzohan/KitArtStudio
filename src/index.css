@@ -15,17 +15,6 @@ body {
   background-size: 55px 55px;
 }
 
-@layer base {
-  @font-face {
-    font-family: "Sriracha";
-    src: url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap') format("woff2");
-  }
-
-  @font-face {
-    font-family: "Inter";
-    src: url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap') format("woff2");
-  }
-}
 
 @layer utilities {
   .border-hsla {
@@ -53,7 +42,7 @@ body {
   }
 
   .hero-heading {
-    @apply uppercase font-['Sriracha'] text-5xl sm:right-10 sm:text-7xl md:text-9xl lg:text-[12rem];
+    @apply uppercase font-['Sriracha'] text-5xl sm:right-10 sm:text-7xl md:text-9xl lg:text-[10rem];
   }
 
   .about-subtext {

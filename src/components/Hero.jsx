@@ -161,7 +161,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <h1 ref={addToRefs} className="special-font hero-heading absolute bottom-5 right-5 text-yellow-400">
+      <h1 ref={addToRefs} className="font-sriracha text-5xl sm:right-10 sm:text-7xl md:text-9xl absolute bottom-5 right-5 text-yellow-400">
         KICHAN
       </h1>
     </div>
