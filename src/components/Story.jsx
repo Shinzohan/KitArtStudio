@@ -1,54 +1,11 @@
-import gsap from "gsap";
-import { useRef } from "react";
-
 import AnimatedTitle from "./AnimatedTitle";
 import StyleButton from "./styleButton";
 
 const FloatingImage = () => {
-  const frameRef = useRef(null);
-
-  const handleMouseMove = (e) => {
-    const { clientX, clientY } = e;
-    const element = frameRef.current;
-
-    if (!element) return;
-
-    const rect = element.getBoundingClientRect();
-    const xPos = clientX - rect.left;
-    const yPos = clientY - rect.top;
-
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    const rotateX = ((yPos - centerY) / centerY) * -10;
-    const rotateY = ((xPos - centerX) / centerX) * 10;
-
-    gsap.to(element, {
-      duration: 0.3,
-      rotateX,
-      rotateY,
-      transformPerspective: 500,
-      ease: "power1.inOut",
-    });
-  };
-
-  const handleMouseLeave = () => {
-    const element = frameRef.current;
-
-    if (element) {
-      gsap.to(element, {
-        duration: 0.3,
-        rotateX: 0,
-        rotateY: 0,
-        ease: "power1.inOut",
-      });
-    }
-  };
-
   return (
     <div id="story" className="min-h-dvh w-screen bg-transparent text-blue-50">
       <div className="flex size-full flex-col items-center py-10 pb-24">
-        <p className="font-general text-sm uppercase md:text-[10px]">
+        <p className="font-general font-inter text-sm uppercase md:text-[10px]">
           WILL YOU LOOK AT THIS
         </p>
 
@@ -62,11 +19,6 @@ const FloatingImage = () => {
             <div className="story-img-mask">
               <div className="story-img-content">
                 <video
-                  ref={frameRef}
-                  onMouseMove={handleMouseMove}
-                  onMouseLeave={handleMouseLeave}
-                  onMouseUp={handleMouseLeave}
-                  onMouseEnter={handleMouseLeave}
                   src="/videos/Story.mp4"
                   alt="entrance.webp"
                   className="object-contain"
@@ -77,7 +29,6 @@ const FloatingImage = () => {
               </div>
             </div>
 
-            {/* for the rounded corner */}
             <svg
               className="invisible absolute size-0"
               xmlns="http://www.w3.org/2000/svg"
@@ -108,15 +59,15 @@ const FloatingImage = () => {
 
         <div className="-mt-80 flex w-full justify-center md:-mt-64 md:me-44 md:justify-end">
           <div className="flex h-full w-fit flex-col items-center md:items-start">
-            <p className=" max-w-sm text-center font-circular-web text-violet-50 md:text-start">
-            Just another gamer who loves to draw 🎮✏️ | Lets create something cool together ✨
+            <p className="max-w-sm text-center font-inter text-violet-50 md:text-start">
+              Just another gamer who loves to draw 🎮✏️ Lets create something cool together ✨
             </p>
-
-           <StyleButton
-           title={"Bluesky"}
-           className="mt-5 shadow-[0_8px_0_#A19AD3] p-2"
-           href={"https://bsky.app/profile/kitartstop.bsky.social"}
-           target="_blank"/>
+            <StyleButton
+              title="Bluesky"
+              className="mt-5 shadow-[0_8px_0_#A19AD3] p-2"
+              href="https://bsky.app/profile/kitartstop.bsky.social"
+              target="_blank"
+            />
           </div>
         </div>
       </div>

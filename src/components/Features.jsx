@@ -14,7 +14,7 @@ const PortfolioImage = ({ src, alt }) => {
 
   useEffect(() => {
     const image = imageRef.current;
-    
+
     gsap.to(image, {
       scale: 1,
       duration: 0.1,
@@ -61,12 +61,12 @@ const PortfolioImage = ({ src, alt }) => {
 };
 
 // Artistic card component
-const ArtCard = ({ 
-  src, 
-  title, 
-  description, 
+const ArtCard = ({
+  src,
+  title,
+  description,
   className = "",
-  size = "medium" 
+  size = "medium"
 }) => {
   const cardRef = useRef(null);
   const contentRef = useRef(null);
@@ -109,12 +109,12 @@ const ArtCard = ({
   };
 
   return (
-    <div 
+    <div
       ref={cardRef}
       className={`relative overflow-hidden rounded-lg ${sizes[size]} ${className}`}
     >
       <PortfolioImage src={src} alt={title} />
-      <div 
+      <div
         ref={contentRef}
         className="absolute inset-0 p-6 flex flex-col justify-between bg-black/60"
       >
@@ -123,7 +123,7 @@ const ArtCard = ({
             {title}
           </h2>
           {description && (
-            <p className="text-sm text-white/80 max-w-xs leading-relaxed">
+            <p className="text-sm font-inter text-white/80 max-w-xs leading-relaxed">
               {description}
             </p>
           )}
@@ -155,9 +155,9 @@ const CreativeHeader = () => {
   return (
     <div ref={headerRef} className="relative py-24 text-center space-y-8">
       <AnimatedTitle
-      title={"<b>This</b> is my collection"}/>
+        title={"<b>This</b> is my collection"} />
       <p className="text-white/70 max-w-2xl mx-auto leading-relaxed">
-        A collection of moments captured through various mediums, 
+        A collection of moments captured through various mediums,
         each telling its own story through color, form, and emotion.
       </p>
       <div className="h-px w-32 bg-white/20 mx-auto" />
@@ -189,7 +189,7 @@ const PortfolioGrid = () => {
   }, []);
 
   return (
-    <div 
+    <div
       ref={gridRef}
       className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto px-4"
     >
@@ -199,33 +199,33 @@ const PortfolioGrid = () => {
         title="Pencil cat🐈"
         description="Traditional medium meets modern interpretation, exploring the timeless elegance of our feline companions."
       />
-      
+
       <ArtCard
         src="img/idk.webp"
         title="Chrollo Lucilfer"
         description="Character study exploring the complex nature of Hunter × Hunter's enigmatic antagonist."
       />
-      
+
       <ArtCard
         src="img/hero-2.webp"
         title="Rem: Dreams in Blue"
         description="A tribute to Re:Zero's beloved character, capturing both strength and gentleness."
       />
-      
+
       <ArtCard
         size="large"
         src="img/banner.webp"
         title="Stream of Consciousness"
         description="A Twitch banner that blends digital art with streaming culture, creating an immersive viewer experience."
       />
-      
-     
-      
+
+
+
       <ArtCard
         src="img/about.webp"
         title="Avengers!!"
         description="This is very old traditional that i did when i was in college for my cousin."
-      /> 
+      />
       <div className="relative overflow-hidden rounded-lg bg-zinc-900 p-6 flex flex-col justify-between">
         <h2 className="font-serif text-2xl text-white italic">
           More Creations Coming Soon

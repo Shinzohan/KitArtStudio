@@ -84,7 +84,7 @@ const About = () => {
 
       {/* Main Content */}
       <div className="relative mb-8 mt-36 flex flex-col items-center gap-5">
-        <p className="font-general text-sm uppercase text-white md:text-[10px]">
+        <p className=" font-inter text-sm uppercase text-white md:text-[10px]">
           Welcome To My Art Gallery
         </p>
         <AnimatedTitle

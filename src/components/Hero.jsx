@@ -133,14 +133,14 @@ const Hero = () => {
           />
         </div>
         <h1 ref={addToRefs} className="special-font hero-heading absolute bottom-5 right-5 z-40 text-black">
-          KIT<b>A</b>RT
+          KITART
         </h1>
         <div id="content" ref={contentRef} className="absolute left-0 top-0 z-40 w-full h-full">
           <div className="mt-24 px-5 sm:px-10">
             <h1 className="relative font-zentry text-5xl font-black text-black/60 sm:right-10 sm:text-7xl md:text-9xl lg:text-[5rem]">
               <span 
                 ref={addToRefs}
-                className="absolute left-0 top-0 -z-10 text-[5rem] uppercase tracking-wide text-red-500/15 lg:text-[16rem]"
+                className="absolute font-sriracha left-0 top-0 -z-10 text-[5rem] uppercase tracking-wide text-red-500/15 lg:text-[12rem]"
               >
                 KitChan
               </span>
@@ -152,7 +152,7 @@ const Hero = () => {
               </span>
             
             </h1>
-            <p ref={addToRefs} className="mt-5 w-full text-end font-serif text-2xl leading-relaxed text-black/80 sm:text-xl md:text-2xl lg:w-1/3 lg:text-5xl">
+            <p ref={addToRefs} className="mt-5 w-full text-end font-sriracha text-2xl leading-relaxed text-black/80 sm:text-xl md:text-2xl lg:w-1/3 lg:text-5xl">
               <AnimatedText 
                 text="Hi! my name is kitchan a 🎨artist, blending creativity, skill, and innovation into every masterpiece."
               />
@@ -162,7 +162,7 @@ const Hero = () => {
         </div>
       </div>
       <h1 ref={addToRefs} className="special-font hero-heading absolute bottom-5 right-5 text-yellow-400">
-        KIC<b>H</b>AN
+        KICHAN
       </h1>
     </div>
   );
