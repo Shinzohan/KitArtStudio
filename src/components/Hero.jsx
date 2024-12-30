@@ -30,6 +30,9 @@ const Hero = () => {
     }
   }, []);
 
+  // Function to check if device is mobile
+  const isMobile = () => window.innerWidth <= 768;
+
   // Combine GSAP animations into a single useGSAP call
   useGSAP(() => {
     const ctx = gsap.context(() => {
@@ -71,47 +74,50 @@ const Hero = () => {
         stagger: 0.2,
       }, "-=0.8");
 
-      // ScrollTrigger animation
-      gsap.set("#image-frame", {
-        clipPath: "polygon(0 2%, 80% 0%, 75% 69%, 11% 100%)", // Clip-path for scroll trigger
-        borderRadius: "0% 0% 0% 0%",
-      });
-
-      ScrollTrigger.create({
-        trigger: "#image-frame",
-        start: "center center",
-        end: "bottom center",
-        scrub: true,
-        animation: gsap.from("#image-frame", {
-          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+      // Only apply ScrollTrigger and scroll animations for non-mobile devices
+      if (!isMobile()) {
+        // ScrollTrigger animation
+        gsap.set("#image-frame", {
+          clipPath: "polygon(0 2%, 80% 0%, 75% 69%, 11% 100%)", // Clip-path for scroll trigger
           borderRadius: "0% 0% 0% 0%",
-          ease: "power1.inOut",
-        }),
-      });
+        });
 
-      // Optimized scroll handler using requestAnimationFrame
-      let ticking = false;
-      const handleScroll = () => {
-        if (!ticking) {
-          requestAnimationFrame(() => {
-            const scrollY = window.scrollY;
-            textElements.current.forEach((el, index) => {
-              if (el) {
-                const direction = index % 2 === 0 ? -1 : 1;
-                const speed = 0.1 + (index * 0.05);
-                gsap.set(el, {
-                  y: scrollY * speed * direction,
-                });
-              }
+        ScrollTrigger.create({
+          trigger: "#image-frame",
+          start: "center center",
+          end: "bottom center",
+          scrub: true,
+          animation: gsap.from("#image-frame", {
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            borderRadius: "0% 0% 0% 0%",
+            ease: "power1.inOut",
+          }),
+        });
+
+        // Optimized scroll handler using requestAnimationFrame
+        let ticking = false;
+        const handleScroll = () => {
+          if (!ticking) {
+            requestAnimationFrame(() => {
+              const scrollY = window.scrollY;
+              textElements.current.forEach((el, index) => {
+                if (el) {
+                  const direction = index % 2 === 0 ? -1 : 1;
+                  const speed = 0.1 + (index * 0.05);
+                  gsap.set(el, {
+                    y: scrollY * speed * direction,
+                  });
+                }
+              });
+              ticking = false;
             });
-            ticking = false;
-          });
-          ticking = true;
-        }
-      };
+            ticking = true;
+          }
+        };
 
-      window.addEventListener("scroll", handleScroll, { passive: true });
-      return () => window.removeEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+      }
     }, containerRef);
 
     return () => ctx.revert();
@@ -150,14 +156,12 @@ const Hero = () => {
               >
                 KITCHAN
               </span>
-            
             </h1>
             <p ref={addToRefs} className="mt-5 w-full text-end font-sriracha text-2xl leading-relaxed text-black/80 sm:text-xl md:text-2xl lg:w-1/3 lg:text-5xl">
               <AnimatedText 
                 text="Hi! my name is kitchan a 🎨artist, blending creativity, skill, and innovation into every masterpiece."
               />
             </p>
-           
           </div>
         </div>
       </div>
