@@ -32,7 +32,7 @@ const RotatingInspiration = () => {
               >
                 <div className="rounded-2xl font-serif italic border-4 border-indigo-400 bg-black p-4 w-full h-full flex flex-col items-center justify-center">
                   <Icon className="text-indigo-400 w-12 h-12 md:w-16 md:h-16 mb-4" />
-                  <p className="text-white font-bold text-xl md:text-2xl">
+                  <p className="text-white  text-xl md:text-2xl font-lucky">
                     {item.skill}
                   </p>
                 </div>

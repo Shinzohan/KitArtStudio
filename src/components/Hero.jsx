@@ -157,7 +157,7 @@ const Hero = () => {
                 KITCHAN
               </span>
             </h1>
-            <p ref={addToRefs} className="mt-5 w-full text-end font-sriracha text-2xl leading-relaxed text-black/80 sm:text-xl md:text-2xl lg:w-1/3 lg:text-5xl">
+            <p ref={addToRefs} className="mt-5 w-full text-end font-lucky text-2xl leading-relaxed text-black/80 sm:text-xl md:text-2xl lg:w-1/3 lg:text-5xl">
               <AnimatedText 
                 text="Hi! my name is kitchan a 🎨artist, blending creativity, skill, and innovation into every masterpiece."
               />
@@ -165,7 +165,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <h1 ref={addToRefs} className="font-sriracha text-5xl sm:right-10 sm:text-7xl md:text-9xl absolute bottom-5 right-5 text-yellow-400">
+      <h1 ref={addToRefs} className="font-lucky text-5xl sm:right-10 sm:text-7xl md:text-9xl absolute bottom-5 right-5 text-yellow-400">
         KICHAN
       </h1>
     </div>

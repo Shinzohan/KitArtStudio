@@ -4,8 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'sriracha': ['Sriracha', 'cursive'],
-        'inter': ['Inter', 'sans-serif'],
+        'lucky': ['Luckiest Guy', 'cursive'],
       },
       colors: {
         blue: {

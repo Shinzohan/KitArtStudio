@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,50 +13,39 @@ body {
   background-size: 55px 55px;
 }
 
-
 @layer utilities {
   .border-hsla {
     @apply border border-white/20;
   }
-
   .floating-nav {
     @apply bg-white rounded-3xl border;
   }
-
   .absolute-center {
     @apply absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%];
   }
-
   .flex-center {
     @apply flex justify-center items-center;
   }
-
   .mask-clip-path {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
-
   .special-font b {
-    font-family: "Sriracha";
+    font-family: "Luckiest Guy";
   }
-
   .hero-heading {
-    @apply uppercase font-['Sriracha'] text-5xl sm:right-10 sm:text-7xl md:text-9xl lg:text-[10rem];
+    @apply uppercase font-['Luckiest_Guy'] text-5xl sm:right-10 sm:text-7xl md:text-9xl lg:text-[10rem];
   }
-
   .about-subtext {
-    @apply absolute bottom-[-80dvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center font-['Inter'] text-lg md:max-w-[34rem];
+    @apply absolute bottom-[-80dvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center font-['Luckiest_Guy'] text-lg md:max-w-[34rem];
   }
-
   .about-image {
     @apply absolute left-1/2 top-0 z-20 h-[60vh] w-96 origin-center -translate-x-1/2 overflow-hidden rounded-3xl md:w-[30vw];
   }
-
   .animated-title {
     @apply flex flex-col gap-1 text-5xl uppercase leading-[.8] text-white sm:px-32 md:text-[6rem];
   }
-
   .animated-word {
-    @apply special-font font-['Sriracha'] opacity-0;
+    @apply special-font font-['Luckiest_Guy'] opacity-0;
     transform: translate3d(10px, 51px, -60px) rotateY(60deg) rotateX(-40deg);
     transform-origin: 50% 50% -150px !important;
     will-change: opacity, transform;
