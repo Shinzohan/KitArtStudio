@@ -62,12 +62,12 @@ const FloatingImage = () => {
             <p className="max-w-sm text-center font-inter text-violet-50 md:text-start">
               Just another gamer who loves to draw 🎮✏️ Lets create something cool together ✨
             </p>
-            <StyleButton
-              title="Bluesky"
-              className="mt-5 shadow-[0_8px_0_#A19AD3] p-2"
-              href="https://bsky.app/profile/kitartstop.bsky.social"
-              target="_blank"
-            />
+          
+            <button
+              className="mt-10 py-3 relative px-8 font-lucky text-2xl text-black rounded-md bg-white isolation-auto z-10 border-2 border-purple-500 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-purple-400 before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700"
+            >
+              <a href="https://bsky.app/profile/kitartstop.bsky.social" target="_blank">Bluesky</a>
+            </button>
           </div>
         </div>
       </div>

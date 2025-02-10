@@ -2,6 +2,7 @@ import React, { useRef, useCallback, memo } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import AnimeArtistCard from './Note';
 
 // Register GSAP plugins once outside component
 gsap.registerPlugin(ScrollTrigger);
@@ -10,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 const AnimatedText = memo(({ text }) => (
   <>
     {text.split(' ').map((word, i) => (
-      <span key={i} className="word inline-block">
+      <span key={i} className="word inline-block border-2 shadow-lg p-2 shadow-black  border-black">
         {word}&nbsp;
       </span>
     ))}
@@ -37,32 +38,32 @@ const Hero = () => {
   useGSAP(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline();
-      
+
       // Initial states
       tl.set("#reveal-overlay", {
         clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", // Top-left to bottom-right
       })
-      .set("#image-frame", {
-        clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)", // Top to bottom-left
-      });
-      
+        .set("#image-frame", {
+          clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)", // Top to bottom-left
+        });
+
       // Main animation sequence
       tl.to("#reveal-overlay", {
         clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)", // Expand clip-path from top-right to bottom-right
         duration: 1.5,
         ease: "power4.inOut",
       })
-      .to("#image-frame", {
-        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", // Expand clip-path from top-left to bottom-right
-        duration: 1.8,
-        ease: "power4.inOut",
-      }, "-=1.2")
-      .from("#current-image", {
-        scale: 1.2,
-        opacity: 0,
-        duration: 1.2,
-        ease: "power3.out",
-      }, "-=1");
+        .to("#image-frame", {
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", // Expand clip-path from top-left to bottom-right
+          duration: 1.8,
+          ease: "power4.inOut",
+        }, "-=1.2")
+        .from("#current-image", {
+          scale: 1.2,
+          opacity: 0,
+          duration: 1.2,
+          ease: "power3.out",
+        }, "-=1");
 
       // Batch process words animation
       const words = contentRef.current.querySelectorAll("span.word");
@@ -138,34 +139,30 @@ const Hero = () => {
             decoding="async"
           />
         </div>
-        <h1 ref={addToRefs} className="special-font hero-heading absolute bottom-5 right-5 z-40 text-black">
-          KITART
-        </h1>
+        <AnimeArtistCard className='z-50'/>
         <div id="content" ref={contentRef} className="absolute left-0 top-0 z-40 w-full h-full">
           <div className="mt-24 px-5 sm:px-10">
             <h1 className="relative font-zentry text-5xl font-black text-black/60 sm:right-10 sm:text-7xl md:text-9xl lg:text-[5rem]">
-              <span 
+             
+
+              <span
                 ref={addToRefs}
-                className="absolute font-sriracha left-0 top-0 -z-10 text-[5rem] uppercase tracking-wide text-red-500/15 lg:text-[12rem]"
+                className="font-lucky text-black opacity-0"
               >
-                KitChan
+                About Me
               </span>
-              <span 
-                ref={addToRefs}
-                className="font-mono font-bold opacity-0"
-              >
-                KITCHAN
-              </span>
+              
             </h1>
-            <p ref={addToRefs} className="mt-5 w-full text-end font-lucky text-2xl leading-relaxed text-black/80 sm:text-xl md:text-2xl lg:w-1/3 lg:text-5xl">
-              <AnimatedText 
-                text="Hi! my name is kitchan a 🎨artist, blending creativity, skill, and innovation into every masterpiece."
+            <p ref={addToRefs} className="mt-5 w-full text-center font-lucky text-2xl leading-relaxed text-black/80 sm:text-xl md:text-2xl lg:w-1/3 lg:text-5xl">
+              <AnimatedText
+                text="Hey! I'm Kitchan, an art streamer and gamer. I draw anime—both digital and traditional—and take commissions. Come hang out for chill art, games, and good vibes!"
               />
             </p>
           </div>
+          
         </div>
       </div>
-      <h1 ref={addToRefs} className="font-lucky text-5xl sm:right-10 sm:text-7xl md:text-9xl absolute bottom-5 right-5 text-yellow-400">
+      <h1 ref={addToRefs} className="font-lucky text-5xl sm:right-10 sm:text-7xl md:text-9xl absolute bottom-5  right-5 text-yellow-400">
         KICHAN
       </h1>
     </div>

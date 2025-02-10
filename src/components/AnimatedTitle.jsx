@@ -13,33 +13,28 @@ const AnimatedTitle = ({
   const containerRef = useRef(null);
 
   useEffect(() => {
-    // Use simplified animation for all users
     animationConfig = {
       ...animationConfig,
       opacity: 1,
       scale: 1,
       stagger: 0.1,
-      duration: 0.6,
-      transform: "translate3d(0, 0, 0)",
-      blur: 0,
+      duration: 1.2,
       ease: "power2.out",
+      transform: "translate3d(0, 0, 0)",
     };
 
     const ctx = gsap.context(() => {
       const defaultConfig = {
-        start: "100 bottom",
+        start: "top 65%", // Starts when the top of the element reaches 75% of the viewport height
         end: "center bottom",
         toggleActions: "play none none reverse",
         opacity: 1,
-        transform: "translate3d(0, 0, 0) rotateY(0deg) rotateX(0deg)",
         ease: "power3.out",
         stagger: 0.04,
         duration: 1,
-        from: "start",
         scale: 1,
-        rotation: 0,
-        blur: 0,
       };
+      
 
       const config = { ...defaultConfig, ...animationConfig };
 
@@ -59,10 +54,11 @@ const AnimatedTitle = ({
         {
           opacity: 0,
           scale: 0.7,
-          y: 50,
-          rotationX: 90,
-          rotationY: 45,
-          filter: "blur(15px)",
+          x: () => gsap.utils.random(-200, 200),  // Random X position from -200 to 200
+          y: () => gsap.utils.random(-200, 200),  // Random Y position from -200 to 200
+          rotation: () => gsap.utils.random(-45, 45),  // Random rotation
+          strokeDasharray: "1000",  // Initial stroke not visible
+          strokeDashoffset: "1000",  // Initially hidden stroke
         },
         {
           opacity: config.opacity,
@@ -74,9 +70,10 @@ const AnimatedTitle = ({
             from: config.from,
           },
           duration: config.duration,
-          rotationX: 0,
-          rotationY: 0,
-          filter: `blur(${config.blur}px)`,
+          strokeDashoffset: 0,  // Reveal the stroke like a pencil drawing
+          x: 0,  // Move to final position (centered)
+          y: 0,  // Move to final position (centered)
+          rotation: 0,  // Reset rotation to original angle
         },
         0
       );
@@ -85,7 +82,6 @@ const AnimatedTitle = ({
     return () => ctx.revert(); // Clean up on unmount
   }, [title, animationConfig]);
 
-  // Render method allows HTML in words (like for icons or styling)
   return (
     <div ref={containerRef} className={clsx("animated-title", containerClass)}>
       {title.split("<br />").map((line, index) => (

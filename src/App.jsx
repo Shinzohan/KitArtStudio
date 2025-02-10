@@ -15,7 +15,7 @@ function App() {
   return (
     <div
      
-      className="relative min-h-screen w-screen overflow-hidden"
+      className="relative min-h-screen bg-black w-screen overflow-hidden"
     >
       <NavBar />
       <Hero />

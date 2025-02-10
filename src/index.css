@@ -6,11 +6,7 @@
 body {
   width: 100dvw;
   overflow-x: hidden;
-  --color: rgba(114, 114, 114, 0.3);
-  background-color: #191a1a;
-  background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
-      linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
-  background-size: 55px 55px;
+  
 }
 
 @layer utilities {
@@ -90,11 +86,11 @@ body {
   position: absolute;
   inset: 0 0 0 0;
   transform: 
-      rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+      rotateY(calc( (var(--position) - 1) * (160 / var(--quantity)) * 1deg))
       translateZ(400px);
 }
 .banner .slider .item img{
-  width: 100%;
+  width: 50%;
   height: 100%;
   object-fit: cover;
 }
